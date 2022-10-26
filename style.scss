@@ -1,0 +1,439 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: red;
+    --secondColor: rgba(248, 218, 218, 0.846);
+    --blackColor: black;
+    --whiteColor: white;
+    --greyColor: grey;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    max-width: 1024px;
+    padding: 0 5rem;
+    margin: auto;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+button{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    padding: .6rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+
+    a{
+        text-decoration: none;
+        color: var(--whiteColor);
+        font-size: 1rem;
+    }
+}
+
+button:hover{
+    background-color: var(--blackColor);
+
+    a{
+        color: var(--primaryColor);
+    }
+}
+
+header{
+    height: 100vh;
+
+    #header{
+        background-color: var(--primaryColor);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 3rem;
+        padding: 0 5rem;
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--whiteColor);
+
+        nav{
+
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                li{
+                    list-style: none;
+                    padding-right: 2rem;
+                    transition: .3s linear;
+
+                    a{
+                        text-decoration: none;
+                        color: var(--whiteColor);
+                    }
+                }
+
+                li:hover{
+                    background-color: white;
+                    padding: .3rem 2rem;
+                    border-radius: .5rem;
+
+                    a{
+                        color: black;
+                    }
+                }
+                
+                
+            }
+            
+        }
+
+        .logo{
+            border: 1px solid white;
+            color: rgb(33, 8, 8);
+        }
+    }
+
+    #hero{
+        height: calc(100vh - 3rem);
+        background: linear-gradient(to right, black, red);
+        display: grid;
+        place-items: center;
+
+        .heroGrid{
+            display: grid;
+            place-items: center;
+            gap: 1.5rem;
+
+            .heroText{
+                background-color: var(--secondColor);
+                padding: 2rem 7rem;
+                text-align: center;
+                border-bottom-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                font-size: 1.3rem;
+
+                span{
+                    color: var(--primaryColor);
+                }
+            }
+
+            .heroImgGrid{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+
+                img{
+                    height: 200px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}
+
+#about{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .aboutText{
+        text-align: center;
+
+        h2{
+            text-decoration: underline var(--primaryColor);
+            color: var(--primaryColor);
+            padding-bottom: .5rem;
+
+            span{
+                color: var(--blackColor);
+            }
+        }
+    }
+
+    .aboutGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .aboutGridImg{
+            position: relative;
+
+            img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            
+
+            .blue{
+                position: absolute;
+                top:-0.7rem;
+                left: 0;
+                background-color: blue;
+                width: 50%;
+                height: 1.2rem;
+                z-index: -1;
+            }
+
+            .yellow{
+                position: absolute;
+                bottom: -0.7rem;
+                right:0;
+                background-color: yellow;
+                width: 97%;
+                height: 1.2rem;
+                z-index: -1;
+            }
+
+            // .yellowSide{
+            //     position: absolute;
+            //     bottom: 0rem;
+            //     right: 50%;
+            //     background-color: yellow;
+            //     width: 40%;
+            //     height: 1.2rem;
+            // }
+        }
+
+        .aboutGridText{
+            display: grid;
+            place-content: center;
+            gap: 1rem;
+
+            span{
+                color: var(--primaryColor);
+            }
+
+            .red{
+                color: var(--primaryColor);
+            }
+
+            button{
+               margin-right: 17rem; 
+            }
+        }
+    }
+}
+
+#benefit{
+    margin: 3rem 0;
+    
+
+    span{
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: grey;
+        font-size: 5rem;
+        position: relative;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .benefitGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        color: var(--whiteColor);
+        height: 200px;
+
+        
+        ol{
+            padding-left: 2rem;
+        }
+
+        h4,
+        li{
+            padding-bottom: 1rem;
+        }
+
+        .blackBenefit{
+            background-color: var(--blackColor);
+            padding: 2rem;
+            font-size: 1rem;
+            
+        }
+
+        .redBenefit{
+            background-color: var(--primaryColor);
+            padding: 2rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+#gallery{
+    margin: 4rem 0;
+    height: fit-content;
+
+    h2{
+        text-align: center;
+        color: rgb(219, 209, 209);
+        font-weight: bolder;
+        padding-bottom: 1.5rem;
+
+        span{
+            color: var(--blackColor);
+        }
+    }
+    
+    .galGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3px;
+
+        img{
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(55%);
+        }
+
+        .spanTwoRow{
+            grid-row: 1 / span 2;
+            height: 163px;
+        }
+
+        .noSpan{
+            height: 80px;
+        }
+
+        .spanTwo{
+            grid-column: 1/span 2;
+            height: 326px;
+        }
+    }
+
+  
+    
+}
+
+#contact{
+    margin: 2rem 0;
+
+    .contContainer{
+        background-color: var(--primaryColor);
+        width: 800px;
+        height: 320px;
+        margin: auto;
+        padding: 1rem;
+        color: var(--whiteColor);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .contText{
+            display: grid;
+            gap: 1rem;
+
+            .contInfo{
+                p{
+                    padding-top: .5rem;
+                }
+            }
+
+            .contDet{
+                .mail{
+                    padding: .5rem 0;
+                }
+            }
+
+            .social{
+                span{
+                    padding-right: .5rem;
+                }
+
+            }
+        }
+
+        .conField{
+            background-color: var(--whiteColor);
+            margin: 1.3rem 0 0 1rem;
+            border-radius: .5rem;
+            padding: 1rem;
+            box-shadow: 0px 5px 10px 0px rgba(214, 208, 208, 0.9), 
+            0px 5px 5px 0px rgba(248, 244, 244, 0.9);
+
+
+            form{
+                width: 100%;
+                height: 90%;
+                display: grid;
+                gap: 1rem;
+
+                input{
+                    height: 3rem;
+                    width: 100%;
+                    padding-left: .5rem;
+                    border: 1px solid rgb(232, 226, 226);
+                }
+
+                button{
+                    width: 40%;
+                    justify-self: flex-end;
+                }
+            }
+        }
+    }
+}
+
+#bottom{
+    padding: 2rem;
+    background-color: var(--primaryColor);
+    margin: 2rem 0;
+
+    .bottomGrid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        color: var(--whiteColor);
+
+        .bottomLogo{
+            h3{
+                color: var(--blackColor);
+            }
+
+            p{
+                padding: 1rem 0;
+            }
+        }
+
+        .openTime{
+            h5{
+                padding-top: .5rem;
+            }
+        }
+
+        .bottomSubscribe{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+
+            input{
+                height: 1.5rem;
+            }
+
+            button{
+                background-color: var(--whiteColor);
+                color: var(--primaryColor);
+            }
+        }
+    }
+}
